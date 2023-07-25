@@ -1,0 +1,20 @@
+/*
+ * distanceSensor.h
+ *
+ *  Created on: May 24, 2023
+ *      Author: Doha
+ */
+
+#ifndef DISTANCESENSOR_H_
+#define DISTANCESENSOR_H_
+
+void Ultrasonic_init(void);
+
+void Ultrasonic_Trigger(void);
+
+uint16 Ultrasonic_readDistance(void);
+
+void Ultrasonic_edgeProcessing(void);
+
+
+#endif /* DISTANCESENSOR_H_ */

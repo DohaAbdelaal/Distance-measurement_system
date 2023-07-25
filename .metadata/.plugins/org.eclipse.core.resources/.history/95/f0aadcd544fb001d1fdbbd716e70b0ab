@@ -1,0 +1,45 @@
+/*
+ * main.c
+ *
+ *  Created on: May 3, 2023
+ *      Author: Doha
+ */
+
+
+#include "lcd.h"
+#include<util/delay.h>
+#include"std_types.h"
+#include<avr/io.h>
+#include "distanceSensor.h"
+int main()
+{
+	/* Enable Global Interrupt I-Bit */
+	SREG |= (1<<7);
+
+	/*Initialize lcd to start working */
+	LCD_init();
+	LCD_displayString("Distance=     Cm");
+
+	Ultrasonic_init();
+	uint16 distance=0;
+
+
+	while(1)
+	{
+		distance=Ultrasonic_readDistance();
+		LCD_moveCursor(0,7);
+		if(distance>=100)
+		{
+			LCD_intgerToString(distance);
+
+		}else
+		{
+			LCD_intgerToString(distance);
+			LCD_displayCharacter(' ');
+		}
+
+
+
+
+	}
+}

@@ -1,0 +1,58 @@
+/*
+ * main.c
+ *
+ *  Created on: May 3, 2023
+ *      Author: Doha
+ */
+
+
+#include "lcd.h"
+#include<util/delay.h>
+#include"std_types.h"
+#include<avr/io.h>
+
+void APP_edgeProcessing()
+{
+	DDRC =0x01;
+	PORTC =0x01;
+
+}
+int main()
+{
+	/*Initialize lcd to start working */
+	LCD_init();
+	LCD_displayString("Temp=     C");
+
+	/*ICU initialization*/
+
+	//configure ICU to work on the rising edge with prescaler 8
+	Icu_ConfigType Icu_Config = {F_CPU_8,RISING};
+
+	/* Enable Global Interrupt I-Bit */
+	SREG |= (1<<7);
+
+	/* Set the Call back function pointer in the ICU driver */
+	Icu_setCallBack(APP_edgeProcessing);
+
+	Icu_init(&Icu_Config);
+
+
+
+
+	while(1)
+	{
+		/*temp=LM35_GetTemperature();
+		LCD_moveCursor(0,7);
+		if(temp>=100)
+		{
+			LCD_intgerToString(temp);
+
+		}else
+		{
+			LCD_intgerToString(temp);
+			LCD_displayCharacter(' ');
+		}
+
+*/
+	}
+}

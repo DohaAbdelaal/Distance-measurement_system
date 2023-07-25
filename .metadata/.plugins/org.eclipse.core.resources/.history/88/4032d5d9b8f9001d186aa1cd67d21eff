@@ -1,0 +1,12 @@
+/*
+ * timer.c
+ *
+ *  Created on: May 24, 2023
+ *      Author: Doha
+ */
+#include "timer.h"
+
+void Timer1_Init()
+{
+	TCCR1A |=(1<<FOC1)
+}

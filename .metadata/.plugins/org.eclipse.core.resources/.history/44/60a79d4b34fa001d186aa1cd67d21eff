@@ -1,0 +1,20 @@
+/*
+ * timer.c
+ *
+ *  Created on: May 24, 2023
+ *      Author: Doha
+ */
+#include "timer.h"
+#include<avr/io.h>
+ISR(TIMER1_CAPT)
+{
+
+}
+void Timer1_Init()
+{
+	TCNT1=0;
+	TCCR1A |=(1<<FOC1A);
+	TCCR1B |=(ICES1)|(CS11);
+	TIMSK |=(1<<TICIE1);
+
+}
