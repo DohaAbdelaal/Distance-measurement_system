@@ -13,3 +13,7 @@ model as follow:
 -DIO, ICU drivers in the MCAL layer.
 
 -LCD , Ultrasonic sensor drivers in the HAL layer.
+
+4. The ICU is used to measure the time the wave is on.Throught the time and knowing the velocity of ultrasonic wave we can measure the distance.
+
+More details of the calculation is provided in the ultasonic folder.
