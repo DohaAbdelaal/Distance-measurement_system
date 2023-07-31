@@ -14,6 +14,6 @@ model as follow:
 
 -LCD , Ultrasonic sensor drivers in the HAL layer.
 
-4. The ICU is used to measure the time the wave is on.Throught the time and knowing the velocity of ultrasonic wave we can measure the distance.
+4. The ICU is used to measure the time the wave is on. Throughout the time and knowing the velocity of ultrasonic wave we can measure the distance.
 
 More details of the calculation is provided in the ultasonic folder.
